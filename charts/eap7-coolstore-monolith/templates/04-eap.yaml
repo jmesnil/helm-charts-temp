@@ -32,4 +32,4 @@ spec:
           key: AMQ_PASSWORD
           name: eap74-amq7-credentials-secret
     - name: KEYCLOAK_URL
-      value: https://{{ lookup "v1" "Route" "keycloak"  }}/auth
+      value: https://{{ lookup "v1" "Route" .Release.Namespace "keycloak"  }}/auth
