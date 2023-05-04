@@ -1,20 +1,74 @@
-## Usage
+<html>
+  <head>
+    <title>Helm examples for JBoss EAP</title>
+  </head>
 
-[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
-Helm's [documentation](https://helm.sh/docs) to get started.
+  <body>
+    <h1>Helm examples for JBoss EAP</h1>
 
-Once Helm has been set up correctly, add the repo as follows:
+    <h2>Usage with <code>helm</code></h2>
 
-  helm repo add <alias> https://<orgname>.github.io/helm-charts
+    <p><a href="https://helm.sh">Helm</a> must be installed to use the charts.  Please refer to
+      Helm's <a href="https://helm.sh/docs">documentation</a> to get started.
 
-If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+    <p>Once Helm has been set up correctly, add the repo as follows:
 
-To install the <chart-name> chart:
+    <code>
+      <pre>
+        helm repo add jboss-eap-examples https://jmesnil.github.io/helm-charts
+      </pre>
+    </code>
 
-    helm install my-<chart-name> <alias>/<chart-name>
+    <p>If you had already added this repo earlier, run <code>helm repo update</code> to retrieve
+      the latest versions of the packages.  You can then run <code>helm search repo jboss-eap-examples</code>
+      to see the charts.
+    
+    <p>To install the <chart-name> chart:
 
-To uninstall the chart:
+    <code>
+      <pre>
+        helm install my-<chart-name> jboss-eap-examples/<chart-name>
+      </pre>
+    </code>
+    
+    <p>To uninstall the chart:
+    
+      <code>
+        <pre>
+          helm delete my-<chart-name>  
+        </pre>
+      </code>
 
-    helm delete my-<chart-name>
+    <h2>Integration with OpenShift Web Console</h2>
+
+    <p>The repo can be added to the OpenShift Web Console as a <code>ProjectHelmChartRepository</code> resource to install its charts
+    from the OpenShift Web Console.</p>
+
+    <p>The resource definition is:
+
+    <code>
+      <pre>
+        apiVersion: helm.openshift.io/v1beta1
+        kind: ProjectHelmChartRepository
+        metadata:
+          name: jboss-eap-up-and-running
+        spec:
+          connectionConfig:
+            url: https://jmesnil.github.io/helm-charts/
+          name: Examples for JBoss EAP
+          description: >-
+            This Helm Chart repository contains examples to deploy JBoss EAP
+            applications on OpenShift        
+      </pre>
+    </code>
+
+    <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource or by running the command:</p>
+
+    <code>
+      <pre>
+        oc apply -f https://jmesnil.github.io/helm-charts/phcr.yaml
+      </pre>
+    </code>
+    </body>
+</html>
+
