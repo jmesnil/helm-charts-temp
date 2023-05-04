@@ -2,26 +2,18 @@
 
 The source code of the Jakarta EE application is at [https://github.com/deewhyweb/eap-coolstore-monolith/tree/ocp](https://github.com/deewhyweb/eap-coolstore-monolith/tree/ocp)
 
-This application *must be installed in a `coolstore` namespace.
+## Prerequisites
 
 This application requires the installation of 3 Operators:
 
 * EAP
-* RH-SSO (which must target the `coolstore` namespace)
+* RH-SSO (which must target the current namespace)
 * AMQ Broker
 
-To install the 3 operators, run the commands:
-
-```
-oc apply -f https://raw.githubusercontent.com/deewhyweb/eap-coolstore-monolith/ocp/openshift/operators/amq-broker-operator.yml
-oc apply -f https://raw.githubusercontent.com/deewhyweb/eap-coolstore-monolith/ocp/openshift/operators/eap-operator.yml
-oc apply -f https://raw.githubusercontent.com/deewhyweb/eap-coolstore-monolith/ocp/openshift/operators/sso-operator.yml
-```
-
-You can also install them using the OpenShift Web console (with the RH-SSO operator targeting only the `coolstore` namespace).
+## After the installation
 
 Once the Helm chart is installed, you need to specify the route that was automatically created by OpenShift for RH-SSO.
-To do so, you must upgrade the Helm chart and replace the value of `keycloak.url` in the chart with the URL of the `keycloak` Route resource with the `/auth` endpoint.
+To do so, you must upgrade the Helm chart and replace the value of `keycloak.url` in the chart's values with the URL of the `keycloak` Route resource with the `/auth` endpoint.
 
 This should be similar to:
 
