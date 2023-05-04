@@ -2,7 +2,7 @@ apiVersion: v2
 name: eap7-with-operator
 description: Build and deploy JBoss EAP 7.4 with EAP Operator on OpenShift
 type: application
-version: 1.0.0
+version: 1.0.1
 
 home: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
 maintainers:
