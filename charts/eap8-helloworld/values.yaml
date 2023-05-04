@@ -1,0 +1,7 @@
+eap8:
+  build:
+    uri: https://github.com/jboss-developer/jboss-eap-quickstarts
+    ref: EAP_8.0.0.Beta
+    contextDir: helloworld
+  deploy:
+    replicas: 3
