@@ -2,7 +2,7 @@ apiVersion: v2
 name: eap7-coolstore
 description: Build and deploy Coolstore With JBoss EAP 7.4
 type: application
-version: 1.0.2
+version: 1.0.3
 
 home: https://github.com/deewhyweb/eap-coolstore-monolith/tree/ocp
 

@@ -1,3 +1,5 @@
+keycloak:
+  url: fix-me # must be changed after the RH-SSO resources have been created 
 eap74:
   build:
     uri: https://github.com/deewhyweb/eap-coolstore-monolith.git
