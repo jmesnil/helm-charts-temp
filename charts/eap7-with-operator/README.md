@@ -4,5 +4,4 @@ This Helm chart packages an application with [JBoss EAP 7.4](https://www.redhat.
 
 It requires that the EAP Operator has been installed on the OpenShift Cluster.
 
-The source code of the Helm chart is at TBD
-Thethe Jakarta EE application is at https://github.com/jboss-eap-up-and-running/eap7-getting-started
+Thethe Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap7-getting-started](https://github.com/jboss-eap-up-and-running/eap7-getting-started).
