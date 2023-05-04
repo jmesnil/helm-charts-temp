@@ -4,7 +4,7 @@ metadata:
   name: jboss-eap-up-and-running
 spec:
   connectionConfig:
-    url: https://jmesnil.github.io/eap7-with-postgres/
+    url: https://jmesnil.github.io/helm-charts/
   name: Examples for JBoss EAP
   description: >-
     This Helm Chart repository contains examples to deploy JBoss EAP
