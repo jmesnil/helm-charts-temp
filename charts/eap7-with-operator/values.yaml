@@ -1,7 +1,3 @@
-database:
-  name: sampledb
-  user: "my-user"
-  password: "my-password"
 eap74:
   build:
     uri: https://github.com/jboss-eap-up-and-running/eap7-getting-started
