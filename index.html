@@ -15,7 +15,7 @@
 
     <code>
       <pre>
-        helm repo add jboss-eap-examples https://jmesnil.github.io/helm-charts
+helm repo add jboss-eap-examples https://jmesnil.github.io/helm-charts
       </pre>
     </code>
 
@@ -27,7 +27,7 @@
 
     <code>
       <pre>
-        helm install my-&lt;chart-name&gt; jboss-eap-examples/&lt;chart-name&gt;
+helm install my-&lt;chart-name&gt; jboss-eap-examples/&lt;chart-name&gt;
       </pre>
     </code>
     
@@ -35,7 +35,7 @@
     
       <code>
         <pre>
-          helm delete my-&lt;chart-name&gt;  
+helm delete my-&lt;chart-name&gt;  
         </pre>
       </code>
 
@@ -48,17 +48,17 @@
 
     <code>
       <pre>
-        apiVersion: helm.openshift.io/v1beta1
-        kind: ProjectHelmChartRepository
-        metadata:
-          name: jboss-eap-up-and-running
-        spec:
-          connectionConfig:
-            url: https://jmesnil.github.io/helm-charts/
-          name: Examples for JBoss EAP
-          description: >-
-            This Helm Chart repository contains examples to deploy JBoss EAP
-            applications on OpenShift        
+apiVersion: helm.openshift.io/v1beta1
+kind: ProjectHelmChartRepository
+metadata:
+  name: jboss-eap-up-and-running
+spec:
+  connectionConfig:
+    url: https://jmesnil.github.io/helm-charts/
+  name: Examples for JBoss EAP
+  description: >-
+    This Helm Chart repository contains examples to deploy JBoss EAP
+    applications on OpenShift        
       </pre>
     </code>
 
