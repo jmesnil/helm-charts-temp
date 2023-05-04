@@ -1,5 +1,9 @@
 keycloak:
-  url: fix-me # must be changed after the RH-SSO resources have been created 
+  # Once the Helm chart is installed, you need to specify the route that was
+  # automatically created by OpenShift for RH-SSO. To do so, you must upgrade
+  # the Helm chart and replace the value of keycloak.url in the chart's values
+  # with the URL of the keycloak Route resource with the /auth endpoint.
+  url: fix-me
 eap74:
   build:
     uri: https://github.com/deewhyweb/eap-coolstore-monolith.git

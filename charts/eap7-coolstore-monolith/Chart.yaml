@@ -2,7 +2,7 @@ apiVersion: v2
 name: eap7-coolstore
 description: Build and deploy Coolstore With JBoss EAP 7.4
 type: application
-version: 1.0.5
+version: 1.0.6
 
 home: https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-coolstore-monolith
 
