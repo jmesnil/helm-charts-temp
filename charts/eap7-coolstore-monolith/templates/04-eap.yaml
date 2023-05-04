@@ -1,0 +1,35 @@
+apiVersion: wildfly.org/v1alpha1
+kind: WildFlyServer
+metadata:
+  name: eap74
+spec:
+  applicationImage: eap74:latest
+  replicas: 1
+  envFrom:
+    - configMapRef:
+        name: eap-config
+  env:
+    # Credentials to connect to the PostgreSQL databases
+    # and AMQ Broker are taken from their secrets
+    - name: POSTGRESQL_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: database-password
+          name: postgresql
+    - name: POSTGRESQL_USER
+      valueFrom:
+        secretKeyRef:
+          key: database-user
+          name: postgresql
+    - name: MQ_USERNAME
+      valueFrom:
+        secretKeyRef:
+          key: AMQ_USER
+          name: eap74-amq7-credentials-secret
+    - name: MQ_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: AMQ_PASSWORD
+          name: eap74-amq7-credentials-secret
+    - name: KEYCLOAK_URL
+      value: https://{{ lookup "v1" "Route" "keycloak"  }}/auth
