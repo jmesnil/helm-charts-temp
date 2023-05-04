@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   eap7-coolstore:
   - apiVersion: v2
+    created: "2023-05-04T11:45:09.621687057Z"
+    dependencies:
+    - name: eap74
+      repository: https://jbossas.github.io/eap-charts/
+      version: 1.1.1
+    description: Build and deploy Coolstore With JBoss EAP 7.4
+    digest: 6321e0fbf43ceee99c3bfb018861b737d3b761841d0ea4e3ebc6fb2111fe6150
+    home: https://github.com/deewhyweb/eap-coolstore-monolith/tree/ocp
+    name: eap7-coolstore
+    type: application
+    urls:
+    - https://github.com/jmesnil/helm-charts/releases/download/eap7-coolstore-1.0.1/eap7-coolstore-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2023-05-04T11:42:32.222940371Z"
     dependencies:
     - name: eap74
@@ -164,4 +178,4 @@ entries:
     urls:
     - https://github.com/jmesnil/helm-charts/releases/download/eap8-helloworld-1.0.0/eap8-helloworld-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-04T11:42:32.222956671Z"
+generated: "2023-05-04T11:45:09.621727159Z"
