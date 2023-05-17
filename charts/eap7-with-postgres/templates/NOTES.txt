@@ -1,0 +1,7 @@
+Your JBoss EAP 7.4 application is installed on OpenShift!
+
+The application image is now building from the Jakarta EE application source code.
+
+Once the image is built, the application can be accessed from the route created by this chart.
+
+
