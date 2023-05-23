@@ -2,7 +2,7 @@ apiVersion: v2
 name: eap7-with-postgresql
 description: Build and deploy JBoss EAP 7.4 + PostgreSQL applications on OpenShift
 type: application
-version: 1.0.3
+version: 1.0.4
 
 home: https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-postgres
 
