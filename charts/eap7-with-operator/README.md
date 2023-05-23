@@ -3,7 +3,9 @@
 This Helm chart packages an application with [JBoss EAP 7.4](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) to be deployed on OpenShift with the EAP Operator.
 
 The Jakarta EE application is a simple "Hello World" application.
+
 It uses the `JBoss EAP 7.4` Helm chart to build the applicaiton image from the source code using OpenShift Source-to-Image (S2I).
+
 Once the application image is built, it is deployed with a `WildFlyServer` resource that is controlled by the EAP Operator.
 
 ## Prerequisites
