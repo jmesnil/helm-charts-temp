@@ -10,7 +10,7 @@ Once the application image is built, it is deployed with a `WildFlyServer` resou
 
 ## Prerequisites
 
-The EAP Operator must be installed on the OpenShift Cluster.
+**The EAP Operator must be installed** on the OpenShift Cluster by following [the instructions](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/getting_started_with_jboss_eap_for_openshift_container_platform/eap-operator-for-automating-application-deployment-on-openshift_default#installing-eap-operator-using-webconsole_default).
 
 ## Source
 
