@@ -2,7 +2,7 @@ apiVersion: v2
 name: eap7-with-operator
 description: Build and deploy JBoss EAP 7.4 with EAP Operator on OpenShift
 type: application
-version: 1.0.2
+version: 1.0.3
 
 home: https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-operator
 
