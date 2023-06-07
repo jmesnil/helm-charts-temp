@@ -9,10 +9,8 @@
   <title>Helm examples for JBoss EAP</title>
  
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/my.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -39,7 +37,7 @@
   <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource: 
   <hr>
   <code>
-    <pre>
+    <pre id="phcr">
 apiVersion: helm.openshift.io/v1beta1
 kind: ProjectHelmChartRepository
 metadata:
@@ -52,6 +50,7 @@ spec:
     This Helm Chart repository contains examples to deploy JBoss EAP
     applications on OpenShift</pre>
   </code>
+  <i id="copyPHCR" class="bi bi-clipboard"></i> 
   <hr>
   
   <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource.</p>
@@ -62,7 +61,17 @@ spec:
     <pre>
 oc apply -f https://jmesnil.github.io/helm-charts/phcr.yaml
     </pre>
-  </code>
+  </code>apiVersion: helm.openshift.io/v1beta1
+kind: ProjectHelmChartRepository
+metadata:
+  name: jboss-eap-up-and-running
+spec:
+  connectionConfig:
+    url: https://jmesnil.github.io/helm-charts/
+  name: Examples for JBoss EAP
+  description: >-
+    This Helm Chart repository contains examples to deploy JBoss EAP
+    applications on OpenShift
   </p>
 
     <h2>Usage with <code>helm</code> tool</h2>
@@ -106,13 +115,35 @@ helm delete my-&lt;chart-name&gt;
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
       <div class="col-12 col-md">
-        <img class="mb-2" src="img/redhat.png" alt="" width="24" height="24">
-        <small class="d-block mb-3 text-muted">&copy; 2023</small>
+        <small class="d-block mb-3 text-muted">&copy; 2023 Red Hat</small>
       </div>
   </footer>
 
   </div>
 
 </body>
+<script>
+  document.getElementById('copyPHCR').addEventListener('click', function() {
+  var phcr = document.getElementById('phcr');
+  var tempPHCR = document.createElement('textarea');
+  tempPHCR.value = phcr.textContent;
+  
+  // Append the textarea to the document
+  document.body.appendChild(tempPHCR);
+  
+  // Select the text inside the textarea
+  tempPHCR.select();
+  tempPHCR.setSelectionRange(0, 99999); /* For mobile devices */
+  
+  // Execute the copy command
+  document.execCommand('copy');
+  
+  // Remove the temporary textarea
+  document.body.removeChild(tempPHCR);
+  document.getElementById('copyPHCR').classList.remove("bi-clipboard");
+  document.getElementById('copyPHCR').classList.add("bi-clipboard-check");
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </html>
 
