@@ -4,7 +4,7 @@ This Helm chart packages an application with [JBoss EAP 7.4](https://www.redhat.
 
 The Jakarta EE application is a [simple "Hello World" application](https://github.com/jboss-eap-up-and-running/eap7-getting-started).
 
-It uses the `JBoss EAP 7.4` Helm chart to build the applicaiton image from the source code using OpenShift Source-to-Image (S2I).
+It uses the `JBoss EAP 7.4` Helm chart to build the application image from the source code using OpenShift Source-to-Image (S2I).
 
 Once the application image is built, it is deployed with a `WildFlyServer` resource that is controlled by the EAP Operator.
 
@@ -14,8 +14,9 @@ Once the application image is built, it is deployed with a `WildFlyServer` resou
 
 ## Helm Chart Structure
 
-This examples use the `JBoss EAP 7.4` Helm chart to build the applicaiton image from the source code using OpenShift Source-to-Image (S2I). 
-Its `Chart.yaml` declares a dependencies on the `eap74` Helm chart and uses it to build the application image:
+This examples use the `eap74` Helm chart to build the application image from the source code of the Jakarta EE application using Source-to-Image (S2I). This dependency is declared in the `Chart.yaml` file.
+
+The `eap74` Helm chart is used build the application image and is configured in the `values.yaml` file:
 
 ```
 eap74:
@@ -28,10 +29,10 @@ By default, the `eap74` would also deploy the application image in OpenShift. Ho
 ```
 eap74:
   deploy:
-    # disable deployment by the Helm Chart as it will done with the EAP Operator
     enabled: false
 ```
 
+Instead, this example will deploy the application with the EAP Operator.
 The EAP Operator defines a `WildFlyServer` resource that declares how the EAP application is deployed:
 
 ```
@@ -40,15 +41,13 @@ kind: WildFlyServer
 metadata:
   name: {{ .Release.Name}}
 spec:
-  # the application image is built by the Helm chart and is named
-  # as the Helm release
   applicationImage: {{ .Release.Name}}:latest
   replicas: 1
-````
+```
 
-This resource uses Helm templating to specify the name of the `applicationImage`.
-The `eap74` Helm Chart creates an `ImageStreamTag` based on the name of the Helm release (`{{ .Release.Name}}:latest`). We use the same values for the `applicationImage` so that this `WildFlyServer` will pull the application image from the corresponding `ImageStreamTag`.
+This `WildFlyServer` resource uses Helm templating to specify the name of the `applicationImage`.
 
+The `eap74` Helm Chart creates an `ImageStreamTag` based on the __name of the Helm release__. The `WildFlyServer` resource uses the same value for its `applicationImage`.
 
 ## Source
 
