@@ -50,7 +50,9 @@ spec:
     This Helm Chart repository contains examples to deploy JBoss EAP
     applications on OpenShift</pre>
   </code>
-  <i id="copyPHCR" class="bi bi-clipboard"></i> 
+  <div>
+
+  <div id="copyPHCR" class="small"><i id="copyPHCR-button" class="bi bi-clipboard"></i>&nbsp;<span id="copyPHCR-text">Copy to clipboard</span></div>
   <hr>
   
   <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource.</p>
@@ -140,8 +142,9 @@ helm delete my-&lt;chart-name&gt;
   
   // Remove the temporary textarea
   document.body.removeChild(tempPHCR);
-  document.getElementById('copyPHCR').classList.remove("bi-clipboard");
-  document.getElementById('copyPHCR').classList.add("bi-clipboard-check");
+  document.getElementById('copyPHCR-button').classList.remove("bi-clipboard");
+  document.getElementById('copyPHCR-button').classList.add("bi-clipboard-check");
+  document.getElementById('copyPHCR-text').textContent = "Copied!";
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
