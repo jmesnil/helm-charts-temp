@@ -10,7 +10,7 @@ This examples use the `eap74` Helm chart to build the application image from the
 
 It also use Kubernetes resources to deploy a PostgreSQL database with a persistent volume.
 
-# Deploy the PostgreSQL database
+### Deploy the PostgreSQL database
 
 The Helm Chart defines a `postgresql` DeploymentConfig with associated resources to deploy the  PostgreSQL database.
 
@@ -23,7 +23,7 @@ database:
   password: "my-password"
 ```
 
-# Build and Deploy the Jakarta EE application
+### Build and Deploy the Jakarta EE application
 
 The `eap74` Helm chart is used build the application image and is configured in the `values.yaml` file:
 
