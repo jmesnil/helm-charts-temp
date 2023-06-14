@@ -16,7 +16,7 @@ The Helm Chart defines a `postgresql` DeploymentConfig with associated resources
 
 The `values.yaml` file defines 3 fields to configure the name of the database and the user credentials to connect to the database:
 
-````
+```
 database:
   name: sampledb
   user: "my-user"
@@ -49,7 +49,7 @@ The `POSTGRESQL_DRIVER_VERSION` environment variable must be specified at `build
 
 When the Jakarta EE application is deployed on OpenShift, it must be configured to connect to the PostgreSQL database that has been installed. This configuration is performed with environment variables:
 
-````
+```
 eap74:
   deploy:
     env:
@@ -74,6 +74,12 @@ eap74:
       - name: POSTGRESQL_SERVICE_HOST
         value: postgresql
 ```
+
+The `POSTGRESQL_DATABASE`, `POSTGRESQL_USER` and `POSTGRESQL_PASSWORD` values are read from the `postgresql` secret that is deployed by this Helm Chart (and their values correspond to those specified in the `values.yaml` file).
+
+The `POSTGRESQL_DATASOURCE` value corresponds to the Datasource name used in the Jakarta applicaiton's `persistence.xml` file.
+
+The `POSTGRESQL_SERVICE_HOST` value is the name of the service that exposes the PostgreSQL database to the OpenShift cluster.
 
 ## Source
 
