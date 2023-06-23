@@ -53,4 +53,4 @@ The `eap74` Helm Chart creates an `ImageStreamTag` based on the __name of the He
 
 The source code of the Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap7-getting-started](https://github.com/jboss-eap-up-and-running/eap7-getting-started).
 
-The source code of the application Helm Chart is at [https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-operator](https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-operator)
+The source code of the application Helm Chart is at [https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-operator](https://github.com/jmesnil/helm-charts/tree/main/charts/eap7-with-operator).

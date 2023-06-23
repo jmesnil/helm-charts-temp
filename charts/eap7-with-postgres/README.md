@@ -100,11 +100,13 @@ curl -k -X POST https://$(oc get route eap7-with-postgres --template='{{ .spec.h
 curl -k -X POST https://$(oc get route eap7-with-postgres --template='{{ .spec.host }}')/app?value=Bonjour+le+Monde
 ```
 
-Then we can read the entries we added
+Then we can read the entries we added by running the command:
 
 ```
 curl -k https://$(oc get route eap7-with-postgres --template='{{ .spec.host }}')/app
-````
+```
+
+This command will display the result: 
 
 ```
 ["Hello World","Bonjour le Monde"]
